@@ -51,12 +51,12 @@ async function OCRIzDir(dir) {
 	// console.log(fileList)	
 
 
-	for (let i = 79; i < fileList.length; i++) {
+	for (let i = 0; i < fileList.length; i++) {
 		let file = fileList[i]
 		if (file.ext != '') {
 			await OCRocitavanje(file).then(() => new Promise(resolve => setTimeout(resolve, 2000)))
 			let progres = (i+1)/(fileList.length-1)*100
-			console.log(`Progres: ${progres.toFixed(2)}%`)
+			console.log(`Progres (${i}): ${progres.toFixed(2)}%`)
 
 		}		
 	}
