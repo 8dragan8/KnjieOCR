@@ -1,4 +1,6 @@
-const {DirList} = require('./DirList')
+const {
+	DirList
+} = require('./DirList')
 const fs = require('fs')
 const tesseract = require('node-tesseract')
 const path = require('path')
@@ -13,14 +15,14 @@ const OCRopcije = {
 	}
 }
 
-function OCRocitavanje(fileIN) {
-	return new Promise(function (resolve, reject) {
+async function OCRocitavanje(fileIN) {
+	return new Promise(async function (resolve, reject) {
 
 		// console.log(fileIN)
 		console.log(`OCR Ocitavanje ${fileIN.base} POCELO`)
 
 
-		tesseract.process(path.format(fileIN), OCRopcije, (error, text) => {
+		await tesseract.process(path.format(fileIN), OCRopcije, (error, text) => {
 			if (error) {
 				console.log('OCR Greska ', error)
 				reject()
@@ -30,6 +32,7 @@ function OCRocitavanje(fileIN) {
 				fs.writeFile(outName, text, err => {
 					if (err) {
 						console.log('Greska u pisanju text fajla', err)
+						reject()
 					} else {
 						console.log(`OCR Ocitavanje ${fileIN.base} ZAVRSENO`)
 						resolve()
@@ -42,19 +45,22 @@ function OCRocitavanje(fileIN) {
 
 let dir = './II-153244-097/test/'
 
-function OCRIzDir(dir) {
+async function OCRIzDir(dir) {
 
 	let fileList = DirList(dir)
 	// console.log(fileList)	
 
-	fileList.forEach(async file => {
+
+	for (let i = 79; i < fileList.length; i++) {
+		let file = fileList[i]
 		if (file.ext != '') {
-			await OCRocitavanje(file)
-			// console.log(filePath)
+			await OCRocitavanje(file).then(() => new Promise(resolve => setTimeout(resolve, 2000)))
+			let progres = (i+1)/(fileList.length-1)*100
+			console.log(`Progres: ${progres.toFixed(2)}%`)
 
-		}
+		}		
+	}
 
-	})
 
 }
 OCRIzDir(dir)
@@ -82,4 +88,3 @@ exports.OCRocitavanje = OCRocitavanje
 //   1    Neural nets LSTM engine only.
 //   2    Legacy + LSTM engines.
 //   3    Default, based on what is available.
-
