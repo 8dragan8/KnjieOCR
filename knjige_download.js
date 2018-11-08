@@ -39,7 +39,7 @@ async function loopStrane(knjiga) {
 	let i = 1
 	let kraj = true
 	let img_url = knjiga.link
-	let dirname = ROOTDIR + knjiga.autor + '/' + knjiga.naslov + '/'
+	let dirname = ROOTDIR + knjiga.autor + '/' + knjiga.naslov + '/' + 'in/'
 
 	fs.mkdir(dirname, {
 		recursive: true
