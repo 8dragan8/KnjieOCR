@@ -32,7 +32,7 @@ let regex = [
 
 	// 6: prelom strana u paragrafu
 	,
-	[/([^\.(\.\“)А-Ш])\n/g, '$1 ']
+	[/([^\.(\.\“)\?\!А-Ш])\n/g, '$1 ']
 
 	// 7: formiranje html <p>
 	,
