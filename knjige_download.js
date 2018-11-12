@@ -1,51 +1,32 @@
-const request = require('request')
-const path = require('path')
+const {
+	listKnjige,
+	ROOTDIR
+} = require('./konstante')
 
 // const cheerio = require('cheerio')
+const request = require('request')
+const path = require('path')
 const fs = require('fs')
 const URL = require('url').URL
-const ROOTDIR = 'Knjige/'
+exports.URL = URL
 
-
-class knjige {
-	constructor(autor, naslov, link, vrsta) {
-		this.autor = autor
-		this.naslov = naslov
-		this.link = new URL(link)
-		this.vrsta = vrsta
-	}
-}
-let listKnjige = []
-listKnjige[0] = new knjige('Vasko Popa', 'Pesme', 'http://digitalna.nb.rs/wb/NBS/Knjige/Srpska_knjizevnost_u_100knjiga/II-153244-098?pageIndex=00001', 'poezija')
-listKnjige[1] = new knjige('Antonije Isaković', 'Pripovedač', 'http://digitalna.nb.rs/wb/NBS/Knjige/Srpska_knjizevnost_u_100knjiga/II-153244-097?pageIndex=00005', 'proza')
-
-console.log(listKnjige)
-
-
-
-// let path = require('path')
-
+const napraviDir = require('./napraviDir')
 
 // console.log('URL objekat - ')
 // console.log('URL host - ' + img_url.host)
 // console.log('URL pathname - ' + img_url.pathname)
 // console.log('URL query - ' + img_url.query)
 
-
 loopStrane(listKnjige[0])
 
-
 async function loopStrane(knjiga) {
+
 	let i = 1
 	let kraj = true
 	let img_url = knjiga.link
 	let dirname = ROOTDIR + knjiga.autor + '/' + knjiga.naslov + '/' + 'in/'
 
-	fs.mkdir(dirname, {
-		recursive: true
-	}, (err) => {
-		if (err) throw err
-	})
+	napraviDir(dirname)
 
 	while (kraj) {
 
@@ -66,8 +47,8 @@ async function loopStrane(knjiga) {
 }
 
 function downloadStrana(img_url, dirname) {
-	return new Promise(function (resolve, reject) {
 
+	return new Promise(function (resolve, reject) {
 
 		request(img_url.href, (error, response) => {
 
@@ -84,7 +65,6 @@ function downloadStrana(img_url, dirname) {
 					})
 					.pipe(fs.createWriteStream(path.format(img_name)))
 
-				// OCRocitavanje(path.format(img_name))
 
 				resolve()
 
@@ -92,5 +72,12 @@ function downloadStrana(img_url, dirname) {
 				reject()
 			}
 		})
+
+
 	})
+}
+
+module.exports = {
+	ROOTDIR: ROOTDIR,
+	listKnjige: listKnjige
 }

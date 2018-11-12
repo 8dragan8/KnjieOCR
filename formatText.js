@@ -1,5 +1,11 @@
 const fs = require('fs')
 const path = require('path')
+const {
+	listKnjige,
+	ROOTDIR
+} = require('./konstante')
+// const DirList = require('./DirList')
+const napraviDir = require('./napraviDir')
 
 
 // console.log(textIN)
@@ -32,6 +38,7 @@ let regex = [
 
 	// 6: prelom strana u paragrafu
 	,
+	// eslint-disable-next-line no-useless-escape
 	[/([^\.(\.\“)\?\!А-Ш])\n/g, '$1 ']
 
 	// 7: formiranje html <p>
@@ -56,7 +63,14 @@ const htmlHead = '<!DOCTYPE html>' +
 
 const htmlFoot = '</body>' + '</html>'
 
-let dir = './II-153244-097/test/out/'
+// let dir = './II-153244-097/test/out/'
+
+let knjiga = listKnjige[0]
+let dir = ROOTDIR + knjiga.autor + '/' + knjiga.naslov + '/split/'
+let outhpath = ROOTDIR + knjiga.autor + '/' + knjiga.naslov + '/txt/'
+
+napraviDir(outhpath)
+
 
 
 function textFormat(file, regex) {
@@ -66,7 +80,7 @@ function textFormat(file, regex) {
 	// let filePTH = path.format(file)
 	// let fileEXT = path.extname(filePTH)
 	// let fileNME = path.basename(filePTH, fileEXT)
-	let rgcheckPTH = '/home/dre/Documents/Programiranje/KnjigeOCR/II-153244-097/test/out/formated/'
+	let rgcheckPTH = outhpath+'formated/'
 
 	// let textIN = fs.readFileSync(filePTH, 'utf-8')
 
@@ -111,7 +125,7 @@ function FormatIzDir(dir) {
 			htmlBody = textFormat(htmlBody, regex)
 			// console.log('Tekst je ' + htmlBody)
 			let htmlString = htmlHead + htmlBody + htmlFoot
-			fs.writeFileSync('II-153244-097/test/out/index.html', htmlString)
+			fs.writeFileSync(outhpath + 'html/index.html', htmlString)
 		}
 
 	})
