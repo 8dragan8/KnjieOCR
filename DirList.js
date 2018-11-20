@@ -11,7 +11,7 @@ function DirList(dir) {
 		console.log(`Pronadjeno ${files.length} fajlova`)
 		let list = []
 		files.forEach(file => {
-			list.push(path.parse(dir + file))
+			list.push(path.parse(path.join(dir, file)))
 		})
 		// console.log('dirlist' + list)
 

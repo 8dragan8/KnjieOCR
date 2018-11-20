@@ -1,8 +1,11 @@
 const URL = require('url').URL
+const path = require('path')
 
 
 
-const ROOTDIR = '/home/dre/Documents/Knjige/'
+
+// const ROOTDIR = '/home/dre/Documents/Knjige/'
+const ROOTDIR = 'd:\\Knjige\\'
 
 
 class knjige {
@@ -11,6 +14,32 @@ class knjige {
 		this.naslov = naslov
 		this.link = new URL(link)
 		this.vrsta = vrsta
+		this.dirName = this.safeDirName()
+	}
+
+	safeDirName() {
+
+		let autor = asci(this.autor)
+		let naslov = asci(this.naslov)
+		
+
+		function asci(str) {
+			let rules = [
+				[' ', '_'],
+				['č', 'c'],
+				['ć', 'c'],
+				['š', 's'],
+				['đ', 'dj'],
+				['ž', 'z']
+			]
+
+			// let out=''
+			rules.forEach(rule => {
+				str = str.replace(rule[0], rule[1])
+			})
+			return str
+		}
+		return path.join(autor, naslov)
 	}
 }
 let listKnjige = []
@@ -20,4 +49,4 @@ listKnjige[1] = new knjige('Antonije Isaković', 'Pripovedač', 'http://digitaln
 // console.log(listKnjige)
 
 exports.ROOTDIR = ROOTDIR
-exports.listKnjige = listKnjige
+exports.listKnjige = listKnjige[0]

@@ -5,7 +5,7 @@ const {
 	ROOTDIR
 } = require('./konstante')
 // const DirList = require('./DirList')
-const napraviDir = require('./napraviDir')
+const { napraviDir } = require('./napraviDir')
 
 
 // console.log(textIN)
@@ -18,7 +18,7 @@ let regex = [
 	// 1: reset hipernacije - trazi '-' i /n koje prati ili ne \s
 	,
 	[/-[\n*\s*]*/g, '']
-	
+
 	// 2: rekonstrukcija paragrafa - trazi sve \n koje ne prati drugi \n i ne prethodi im
 	,
 	[/([^\n])\n([^\n])/g, '$1 $2']
@@ -44,32 +44,49 @@ let regex = [
 	// 7: formiranje html <p>
 	,
 	[/^(.*)$/gm, '<p>$1</p>']
-	
+
 	// 8: formiranje html <h1>
 	,
 	[/(<p>)([^а-ш]*)(<\/p>)/g, '<h1>$2</h1>']
 
 ]
-const htmlHead = '<!DOCTYPE html>' +
-	'<html lang="en">' +
-	'<head>' +
-	'<meta charset="UTF-8">' +
-	'<meta name="viewport" content="width=device-width, initial-scale=1.0">' +
-	'<meta http-equiv="X-UA-Compatible" content="ie=edge">' +
-	'<link rel="stylesheet" href="main.css">' +
-	'<title>OCR</title>' +
-	'</head>' +
-	'<body>'
+const htmlHead = `<!DOCTYPE html>
+					<html lang="en">
+						<head>
+							<meta charset="UTF-8">
+							<meta name="viewport" content="width=device-width, initial-scale=1.0">
+							<meta http-equiv="X-UA-Compatible" content="ie=edge">
+							<link rel="stylesheet" href="main.css">
+							<title>${listKnjige.autor} - ${listKnjige.naslov}</title>
+						</head>
+						<body>`
 
-const htmlFoot = '</body>' + '</html>'
+const htmlFoot = `</body>
+					</html>`
+
+const maincss = `*{
+					max-width: 900px;
+					align-content: center;
+					margin-left: auto;
+					margin-right: auto;
+					
+					font-family: sans-serif;
+					font-size: 15px
+
+				}
+
+				p{
+					text-indent: 20px;
+					text-justify: distribute;
+					text-align: justify;
+
+				}`
 
 // let dir = './II-153244-097/test/out/'
 
-let knjiga = listKnjige[0]
-let dir = ROOTDIR + knjiga.autor + '/' + knjiga.naslov + '/split/'
-let outhpath = ROOTDIR + knjiga.autor + '/' + knjiga.naslov + '/txt/'
+let dir = path.join(ROOTDIR, listKnjige.dirName, 'out')
+let outhpath = path.join(ROOTDIR, listKnjige.dirName)
 
-napraviDir(outhpath)
 
 
 
@@ -80,8 +97,9 @@ function textFormat(file, regex) {
 	// let filePTH = path.format(file)
 	// let fileEXT = path.extname(filePTH)
 	// let fileNME = path.basename(filePTH, fileEXT)
-	let rgcheckPTH = outhpath+'formated/'
+	let rgcheckPTH = path.join(outhpath, 'test')
 
+	napraviDir(rgcheckPTH)
 	// let textIN = fs.readFileSync(filePTH, 'utf-8')
 
 
@@ -93,7 +111,7 @@ function textFormat(file, regex) {
 	for (let i = 0; i < regex.length; i++) {
 		let textTEMP = file.replace(regex[i][0], regex[i][1])
 		file = textTEMP
-		fs.writeFileSync(rgcheckPTH + 'test' + i + '.txt', file)
+		fs.writeFileSync(path.join(rgcheckPTH, 'test ' + i + '.txt'), file)
 	}
 	return file
 }
@@ -109,23 +127,24 @@ function FormatIzDir(dir) {
 			let htmlBody = ''
 			console.log(`Pronadjeno ${files.length} fajlova`)
 			files.forEach(async file => {
-				let filePath = path.parse(dir + file)
+				let filePath = path.parse(path.join(dir, file))
 				if (filePath.ext == '.txt') {
-					let textIN = fs.readFileSync(dir + file, 'utf-8')
+					let textIN = fs.readFileSync(path.format(filePath), 'utf-8')
 
 					htmlBody += textIN
-					
-					
+
+
 					// console.log(htmlBody)
 				}
-				
-				
+
+
 			})
-			
+
 			htmlBody = textFormat(htmlBody, regex)
 			// console.log('Tekst je ' + htmlBody)
 			let htmlString = htmlHead + htmlBody + htmlFoot
-			fs.writeFileSync(outhpath + 'html/index.html', htmlString)
+			fs.writeFileSync(path.join(outhpath, 'index.html'), htmlString)
+			fs.writeFileSync(path.join(outhpath, 'main.css'), maincss)
 		}
 
 	})

@@ -8,23 +8,21 @@ const request = require('request')
 const path = require('path')
 const fs = require('fs')
 const URL = require('url').URL
-exports.URL = URL
+// exports.URL = URL
 
-const napraviDir = require('./napraviDir')
+const {napraviDir} = require('./napraviDir')
 
-// console.log('URL objekat - ')
-// console.log('URL host - ' + img_url.host)
-// console.log('URL pathname - ' + img_url.pathname)
-// console.log('URL query - ' + img_url.query)
 
-loopStrane(listKnjige[0])
+loopStrane(listKnjige)
 
 async function loopStrane(knjiga) {
 
 	let i = 1
 	let kraj = true
 	let img_url = knjiga.link
-	let dirname = ROOTDIR + knjiga.autor + '/' + knjiga.naslov + '/' + 'in/'
+	let dirname = path.join(ROOTDIR, knjiga.dirName, 'in')
+	console.log(dirname)
+	
 
 	napraviDir(dirname)
 
@@ -57,7 +55,7 @@ function downloadStrana(img_url, dirname) {
 			if (!error && response.statusCode == 200) {
 
 
-				let img_name = path.parse(dirname + img_url.searchParams.get('pageIndex') + '.jpg')
+				let img_name = path.parse(path.join(dirname, img_url.searchParams.get('pageIndex') + '.jpg'))
 
 				request(img_url.href)
 					.on('error', function (err) {

@@ -10,10 +10,12 @@
   "license": "ISC",
   "private": true,
   "dependencies": {
+    "eslint": "^5.9.0",
     "fs": "0.0.1-security",
     "httpcheck": "^0.3.0",
     "jimp": "^0.5.6",
     "ng-ocr": "^1.6.1",
+    "node-cmd": "^3.0.0",
     "node-tesseract": "^0.2.7",
     "node-uuid": "^1.4.8",
     "path": "^0.12.7",

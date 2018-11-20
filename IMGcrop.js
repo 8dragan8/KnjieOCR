@@ -1,5 +1,5 @@
-const DirList = require('./DirList')
-const napraviDir = require('./napraviDir')
+const {DirList} = require('./DirList')
+const {napraviDir} = require('./napraviDir')
 
 const path = require('path')
 const jimp = require('jimp')
@@ -9,16 +9,17 @@ const {
 } = require('./konstante')
 
 
-let knjiga = listKnjige[0]
-let dir = ROOTDIR + knjiga.autor + '/' + knjiga.naslov + '/' + 'in/'
-let outhpath = ROOTDIR + knjiga.autor + '/' + knjiga.naslov + '/split/'
+// let listKnjige = listKnjige
+let dir = path.join(ROOTDIR, listKnjige.dirName, 'in')
+let outhpath = path.join(ROOTDIR, listKnjige.dirName, 'split')
 
 napraviDir(outhpath)
 
 
 let fileList = DirList(dir)
-// console.log(fileList)
 
+// console.log(dir)
+// console.log(fileList)
 // let test = 9
 
 IMGcrop()
@@ -38,8 +39,8 @@ function IMGcrop() {
 			console.log(`Progres (${i}): ${progres.toFixed(2)}%`)
 			let imgL = image.clone()
 			let imgD = image.clone()
-			imgL.crop(0, 0, mid, h).quality(100).write(outhpath + imgname + 'a' + exten)
-			imgD.crop(mid, 0, mid, h).quality(100).write(outhpath + imgname + 'b' + exten)
+			imgL.crop(0, 0, mid, h).quality(100).write(path.join(outhpath, imgname + 'a' + exten))
+			imgD.crop(mid, 0, mid, h).quality(100).write(path.join(outhpath, imgname + 'b' + exten))
 		}).catch(err => {
 			console.error(`Slika ${i} greska : ${err}`)
 		})

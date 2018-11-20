@@ -2,48 +2,35 @@ const {
 	DirList
 } = require('./DirList')
 const fs = require('fs')
-const tesseract = require('node-tesseract')
+// const tesseract = require('node-tesseract')
 const path = require('path')
+const { spawn } = require('child_process')
+const { napraviDir } = require('./napraviDir')
+
+
+
+const {
+	listKnjige,
+	ROOTDIR
+} = require('./konstante')
 
 
 const OCRopcije = {
-	l: 'srp+hrv',
+	l: 'srp+hrv+eng+script/Cyrillic+script/Latin+srp_latn',
 	psm: 4,
 	oem: 1,
+	binary: 'd:\\Programiranje\\Tesseract-OCR\\tesseract.exe',
+	dpi: 96,
 	env: {
 		maxBuffer: 4096 * 4096
 	}
 }
 
-async function OCRocitavanje(fileIN) {
-	return new Promise(async function (resolve, reject) {
-
-		// console.log(fileIN)
-		console.log(`OCR Ocitavanje ${fileIN.base} POCELO`)
 
 
-		await tesseract.process(path.format(fileIN), OCRopcije, (error, text) => {
-			if (error) {
-				console.log('OCR Greska ', error)
-				reject()
-			} else {
-				let outName = fileIN.dir + '/out/' + fileIN.name + '.txt'
-				// console.log(outName)
-				fs.writeFile(outName, text, err => {
-					if (err) {
-						console.log('Greska u pisanju text fajla', err)
-						reject()
-					} else {
-						console.log(`OCR Ocitavanje ${fileIN.base} ZAVRSENO`)
-						resolve()
-					}
-				})
-			}
-		})
-	})
-}
 
-let dir = './II-153244-097/test/'
+
+let dir = path.join(ROOTDIR, listKnjige.dirName, 'split')
 
 async function OCRIzDir(dir) {
 
@@ -54,16 +41,67 @@ async function OCRIzDir(dir) {
 	for (let i = 0; i < fileList.length; i++) {
 		let file = fileList[i]
 		if (file.ext != '') {
-			await OCRocitavanje(file).then(() => new Promise(resolve => setTimeout(resolve, 2000)))
-			let progres = (i+1)/(fileList.length-1)*100
+			await OCRocitavanje(file)
+			// .then(() => new Promise(resolve => setTimeout(resolve, 2000)))
+			let progres = (i + 1) / (fileList.length) * 100
 			console.log(`Progres (${i}): ${progres.toFixed(2)}%`)
 
-		}		
+		}
 	}
 
 
 }
+
 OCRIzDir(dir)
+
+async function OCRocitavanje(fileIN) {
+	return new Promise(async function (resolve, reject) {
+
+		// console.log(fileIN)
+		console.log(`OCR Ocitavanje ${fileIN.base} POCELO`)
+		let outDIR = path.join(ROOTDIR, listKnjige.dirName, 'out')
+
+		napraviDir(outDIR)
+
+		let outName = path.join(outDIR, fileIN.name)
+
+
+		let fileinPTH = path.format(fileIN)
+		// console.log(fileinPTH)
+		let opt = [fileinPTH, outName, '-l', OCRopcije.l, '--psm', OCRopcije.psm, '--oem', OCRopcije.oem, '--dpi', OCRopcije.dpi]
+		// console.log(opt)
+
+		const tesseract = spawn(OCRopcije.binary, opt)
+
+		tesseract.on('error', (err) => {
+			console.log('Failed to start subprocess.')
+			reject()
+		})
+		tesseract.stdout.on('data', (data) => {
+			console.log(`stdout: ${data}`)
+		})
+
+		tesseract.stderr.on('data', (data) => {
+
+			let str = `${data}`
+			if (str.slice(0,15) == 'Tesseract Open ') {
+
+				// console.log('Sve OK')
+			}
+			else {
+
+				console.log(`stderr: ${data}`)
+				reject()
+			}
+		})
+
+		tesseract.on('close', (code) => {
+			console.log(`OCR Ocitavanje ${fileIN.base} ZAVRSENO - code ${code}`)
+			resolve()
+		})
+
+	})
+}
 
 exports.OCRocitavanje = OCRocitavanje
 
