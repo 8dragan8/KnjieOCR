@@ -1,0 +1,579 @@
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                width="630" height="1329">
+                
+                <g>
+                   <rect x="50" y="65"
+            width="264" height="30"
+            rx="3" ry="3"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>const URL = require(&apos;url&apos;).URL</title>
+            <text x="65" y="85"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="65" y="85">const URL = require(&apos;url&apos;).URL</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="50" y="113.5"
+            width="248.4" height="30"
+            rx="3" ry="3"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>const path = require(&apos;path&apos;)</title>
+            <text x="65" y="133.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="65" y="133.5">const path = require(&apos;path&apos;)</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="50" y="162"
+            width="264" height="30"
+            rx="3" ry="3"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>const ROOTDIR = &apos;d:\\Knjige\\&apos;</title>
+            <text x="65" y="182"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="65" y="182">const ROOTDIR = &apos;d:\\Knjige\\&apos;</tspan>
+            </text>
+                   
+                   
+                </g>
+            <g>
+                <rect x="50" y="225.5"
+            width="151.39999999999998" height="30"
+            style="fill:#80cbc4; stroke:#444; stroke-width:1" />
+                    
+                <line x1="60" y1="225.5" x2="60" y2="255.5"
+                style="fill:#80cbc4; stroke:#444; stroke-width:1" />
+                <line x1="191.39999999999998" y1="225.5" x2="191.39999999999998" y2="255.5"
+                style="fill:#80cbc4; stroke:#444; stroke-width:1" />
+             
+                <title>class knjige </title>
+            <text x="75" y="245.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="75" y="245.5">class knjige </tspan>
+            </text>
+                
+            </g>
+            <g>
+                <rect x="87" y="274"
+            width="354.2" height="30"
+            style="fill:#a5d6a7; stroke:#444; stroke-width:1" />
+                    
+                <line x1="97" y1="274" x2="97" y2="304"
+                style="fill:#a5d6a7; stroke:#444; stroke-width:1" />
+                <line x1="431.2" y1="274" x2="431.2" y2="304"
+                style="fill:#a5d6a7; stroke:#444; stroke-width:1" />
+             
+                <title>constructor(autor, naslov, link, vrsta)</title>
+            <text x="112" y="294"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="112" y="294">constructor(autor, naslov, link, vrsta)</tspan>
+            </text>
+                
+            </g>
+                <g>
+                   <rect x="124" y="322.5"
+            width="170.4" height="30"
+            rx="3" ry="3"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>this.autor = autor</title>
+            <text x="139" y="342.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="139" y="342.5">this.autor = autor</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="124" y="371"
+            width="186" height="30"
+            rx="3" ry="3"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>this.naslov = naslov</title>
+            <text x="139" y="391"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="139" y="391">this.naslov = naslov</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="124" y="419.5"
+            width="193.79999999999998" height="30"
+            rx="3" ry="3"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>this.link = URL(link)</title>
+            <text x="139" y="439.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="139" y="439.5">this.link = URL(link)</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="124" y="468"
+            width="170.4" height="30"
+            rx="3" ry="3"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>this.vrsta = vrsta</title>
+            <text x="139" y="488"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="139" y="488">this.vrsta = vrsta</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="124" y="516.5"
+            width="287.4" height="30"
+            rx="3" ry="3"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>this.dirName = this.safeDirName()</title>
+            <text x="139" y="536.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="139" y="536.5">this.dirName = this.safeDirName()</tspan>
+            </text>
+                   
+                   
+                </g>
+            <g>
+                <rect x="87" y="580"
+            width="151.39999999999998" height="30"
+            style="fill:#a5d6a7; stroke:#444; stroke-width:1" />
+                    
+                <line x1="97" y1="580" x2="97" y2="610"
+                style="fill:#a5d6a7; stroke:#444; stroke-width:1" />
+                <line x1="228.39999999999998" y1="580" x2="228.39999999999998" y2="610"
+                style="fill:#a5d6a7; stroke:#444; stroke-width:1" />
+             
+                <title>safeDirName()</title>
+            <text x="112" y="600"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="112" y="600">safeDirName()</tspan>
+            </text>
+                
+            </g>
+                <g>
+                   <rect x="124" y="628.5"
+            width="248.4" height="30"
+            rx="3" ry="3"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>let autor = asci(this.autor)</title>
+            <text x="139" y="648.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="139" y="648.5">let autor = asci(this.autor)</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="124" y="677"
+            width="264" height="30"
+            rx="3" ry="3"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>let naslov = asci(this.naslov)</title>
+            <text x="139" y="697"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="139" y="697">let naslov = asci(this.naslov)</tspan>
+            </text>
+                   
+                   
+                </g>
+            <g>
+                <rect x="124" y="740.5"
+            width="190.4" height="30"
+            style="fill:#a5d6a7; stroke:#444; stroke-width:1" />
+                    
+                <line x1="134" y1="740.5" x2="134" y2="770.5"
+                style="fill:#a5d6a7; stroke:#444; stroke-width:1" />
+                <line x1="304.4" y1="740.5" x2="304.4" y2="770.5"
+                style="fill:#a5d6a7; stroke:#444; stroke-width:1" />
+             
+                <title>function asci(str)</title>
+            <text x="149" y="760.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="149" y="760.5">function asci(str)</tspan>
+            </text>
+                
+            </g>
+                <g>
+                   <rect x="161" y="789"
+            width="443.4" height="30"
+            rx="3" ry="3"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>let rules = [[&apos; &apos;, &apos;_&apos;], [&apos;č&apos;, &apos;c&apos;], [&apos;ć&apos;, &apos;c&apos;], [&apos;š&apos;, &apos;s&apos;], [&apos;đ&apos;, &apos;dj&apos;], [&apos;ž&apos;, &apos;z&apos;]]</title>
+            <text x="176" y="809"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="176" y="809">let rules = [[&apos; &apos;, &apos;_&apos;], [&apos;č&apos;, &apos;c&apos;], [&apos;ć&apos;, &apos;c&apos;], [...</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="161" y="837.5"
+            width="170.4" height="30"
+            rx="2" ry="2"
+            style="fill:#C5E1A5; stroke:#444; stroke-width:1" />
+                   <title>rules.forEach(*())</title>
+            <text x="176" y="857.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="176" y="857.5">rules.forEach(*())</tspan>
+            </text>
+                   
+                   
+                </g>
+            <g>
+                <rect x="198" y="886"
+            width="120.2" height="30"
+            style="fill:#a5d6a7; stroke:#444; stroke-width:1" />
+                    
+                <line x1="208" y1="886" x2="208" y2="916"
+                style="fill:#a5d6a7; stroke:#444; stroke-width:1" />
+                <line x1="308.2" y1="886" x2="308.2" y2="916"
+                style="fill:#a5d6a7; stroke:#444; stroke-width:1" />
+             
+                <title>(rule) =&gt;</title>
+            <text x="223" y="906"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="223" y="906">(rule) =&gt;</tspan>
+            </text>
+                
+            </g>
+                <g>
+                   <rect x="235" y="934.5"
+            width="303" height="30"
+            rx="3" ry="3"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>str = str.replace(rule[0], rule[1])</title>
+            <text x="250" y="954.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="250" y="954.5">str = str.replace(rule[0], rule[1])</tspan>
+            </text>
+                   
+                   
+                </g>
+            <g>
+                <rect x="161" y="983"
+            width="108" height="30"
+            rx="3" ry="3"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                
+                <line x1="269" y1="993" x2="274" y2="993"
+                style="fill:#a5d6a7; stroke:#444; stroke-width:1" />
+                
+                <line x1="269" y1="1003" x2="274" y2="1003"
+                style="fill:#a5d6a7; stroke:#444; stroke-width:1" />
+
+                <path d="M274, 987 L290, 998 L274, 1009 Z" 
+        fill="#a5d6a7" stroke="#444" stroke-width="1" />
+                             
+                <title>return str</title>
+            <text x="176" y="1003"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="176" y="1003">return str</tspan>
+            </text>
+                
+            </g>
+            <g>
+                <rect x="124" y="1031.5"
+            width="271.79999999999995" height="30"
+            rx="3" ry="3"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                
+                <line x1="395.79999999999995" y1="1041.5" x2="400.79999999999995" y2="1041.5"
+                style="fill:#a5d6a7; stroke:#444; stroke-width:1" />
+                
+                <line x1="395.79999999999995" y1="1051.5" x2="400.79999999999995" y2="1051.5"
+                style="fill:#a5d6a7; stroke:#444; stroke-width:1" />
+
+                <path d="M400.79999999999995, 1035.5 L416.79999999999995, 1046.5 L400.79999999999995, 1057.5 Z" 
+        fill="#a5d6a7" stroke="#444" stroke-width="1" />
+                             
+                <title>return path.join(autor, naslov)</title>
+            <text x="139" y="1051.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="139" y="1051.5">return path.join(autor, naslov)</tspan>
+            </text>
+                
+            </g>
+                <g>
+                   <rect x="50" y="1080"
+            width="178.2" height="30"
+            rx="3" ry="3"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>let listKnjige = []</title>
+            <text x="65" y="1100"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="65" y="1100">let listKnjige = []</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="50" y="1128.5"
+            width="443.4" height="30"
+            rx="3" ry="3"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>listKnjige[0] = knjige(&apos;Vasko Popa&apos;, &apos;Pesme&apos;, &apos;http://digitalna.nb.rs/wb/NBS/Knjige/Srpska_knjizevnost_u_100knjiga/II-153244-098?pageIndex=00001&apos;, &apos;poezija&apos;)</title>
+            <text x="65" y="1148.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="65" y="1148.5">listKnjige[0] = knjige(&apos;Vasko Popa&apos;, &apos;Pesme&apos;, &apos;htt...</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="50" y="1177"
+            width="443.4" height="30"
+            rx="3" ry="3"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>listKnjige[1] = knjige(&apos;Antonije Isaković&apos;, &apos;Pripovedač&apos;, &apos;http://digitalna.nb.rs/wb/NBS/Knjige/Srpska_knjizevnost_u_100knjiga/II-153244-097?pageIndex=00005&apos;, &apos;proza&apos;)</title>
+            <text x="65" y="1197"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="65" y="1197">listKnjige[1] = knjige(&apos;Antonije Isaković&apos;, &apos;Pripo...</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="50" y="1225.5"
+            width="225" height="30"
+            rx="3" ry="3"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>exports.ROOTDIR = ROOTDIR</title>
+            <text x="65" y="1245.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="65" y="1245.5">exports.ROOTDIR = ROOTDIR</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="50" y="1274"
+            width="295.2" height="30"
+            rx="3" ry="3"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>exports.listKnjige = listKnjige[0]</title>
+            <text x="65" y="1294"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="65" y="1294">exports.listKnjige = listKnjige[0]</tspan>
+            </text>
+                   
+                   
+                </g>
+            <g>
+               <rect x="25" y="13.75"
+            width="216.6" height="24"
+            style="fill:#fff59d; stroke:#444; stroke-width:1" />
+               <circle cx="25" cy="25" r="15"
+        style="fill:#fff59d; stroke:#444; stroke-width:1" />
+               <title>Program: source module</title>
+            <text x="55" y="30"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="55" y="30">Program: source module</tspan>
+            </text>
+            </g>
+            <g>
+               <path d="M25, 40 L25 76 Q25 80
+                29 80
+                L42 80 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M42, 77 L50, 80 L42, 83 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M25, 40 L25 124.5 Q25 128.5
+                29 128.5
+                L42 128.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M42, 125.5 L50, 128.5 L42, 131.5 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M25, 40 L25 173 Q25 177
+                29 177
+                L42 177 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M42, 174 L50, 177 L42, 180 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M25, 40 L25 236.5 Q25 240.5
+                29 240.5
+                L42 240.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M42, 237.5 L50, 240.5 L42, 243.5 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M68.5, 255.5 L68.5 285 Q68.5 289
+                72.5 289
+                L79 289 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M79, 286 L87, 289 L79, 292 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M105.5, 304 L105.5 333.5 Q105.5 337.5
+                109.5 337.5
+                L116 337.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M116, 334.5 L124, 337.5 L116, 340.5 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M105.5, 304 L105.5 382 Q105.5 386
+                109.5 386
+                L116 386 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M116, 383 L124, 386 L116, 389 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M105.5, 304 L105.5 430.5 Q105.5 434.5
+                109.5 434.5
+                L116 434.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M116, 431.5 L124, 434.5 L116, 437.5 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M105.5, 304 L105.5 479 Q105.5 483
+                109.5 483
+                L116 483 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M116, 480 L124, 483 L116, 486 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M105.5, 304 L105.5 527.5 Q105.5 531.5
+                109.5 531.5
+                L116 531.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M116, 528.5 L124, 531.5 L116, 534.5 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M68.5, 255.5 L68.5 591 Q68.5 595
+                72.5 595
+                L79 595 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M79, 592 L87, 595 L79, 598 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M105.5, 610 L105.5 639.5 Q105.5 643.5
+                109.5 643.5
+                L116 643.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M116, 640.5 L124, 643.5 L116, 646.5 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M105.5, 610 L105.5 688 Q105.5 692
+                109.5 692
+                L116 692 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M116, 689 L124, 692 L116, 695 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M105.5, 610 L105.5 751.5 Q105.5 755.5
+                109.5 755.5
+                L116 755.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M116, 752.5 L124, 755.5 L116, 758.5 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M142.5, 770.5 L142.5 800 Q142.5 804
+                146.5 804
+                L153 804 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M153, 801 L161, 804 L153, 807 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M142.5, 770.5 L142.5 848.5 Q142.5 852.5
+                146.5 852.5
+                L153 852.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M153, 849.5 L161, 852.5 L153, 855.5 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M179.5, 867.5 L179.5 897 Q179.5 901
+                183.5 901
+                L198 901 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               false
+            </g>
+            <g>
+               <path d="M216.5, 916 L216.5 945.5 Q216.5 949.5
+                220.5 949.5
+                L227 949.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M227, 946.5 L235, 949.5 L227, 952.5 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M142.5, 770.5 L142.5 994 Q142.5 998
+                146.5 998
+                L153 998 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M153, 995 L161, 998 L153, 1001 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M105.5, 610 L105.5 1042.5 Q105.5 1046.5
+                109.5 1046.5
+                L116 1046.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M116, 1043.5 L124, 1046.5 L116, 1049.5 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M25, 40 L25 1091 Q25 1095
+                29 1095
+                L42 1095 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M42, 1092 L50, 1095 L42, 1098 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M25, 40 L25 1139.5 Q25 1143.5
+                29 1143.5
+                L42 1143.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M42, 1140.5 L50, 1143.5 L42, 1146.5 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M25, 40 L25 1188 Q25 1192
+                29 1192
+                L42 1192 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M42, 1189 L50, 1192 L42, 1195 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M25, 40 L25 1236.5 Q25 1240.5
+                29 1240.5
+                L42 1240.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M42, 1237.5 L50, 1240.5 L42, 1243.5 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M25, 40 L25 1285 Q25 1289
+                29 1289
+                L42 1289 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M42, 1286 L50, 1289 L42, 1292 Z" 
+        fill="#333" />
+            </g>
+            </svg>
