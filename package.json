@@ -19,7 +19,9 @@
     "node-tesseract": "^0.2.7",
     "node-uuid": "^1.4.8",
     "path": "^0.12.7",
-    "transform": "^1.1.2"
+    "transform": "^1.1.2",
+    "ms": ">=0.7.1",
+    "uglify-js": ">=2.6.0"
   },
   "devDependencies": {},
   "description": "Ocitavanje skeniranih knjiga"
